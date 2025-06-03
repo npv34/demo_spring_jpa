@@ -1,6 +1,7 @@
 package org.app.demojpa.services;
 
 import org.app.demojpa.entities.Department;
+import org.app.demojpa.entities.User;
 import org.app.demojpa.repositories.DepartmentRepository;
 import org.springframework.stereotype.Service;
 
@@ -22,4 +23,9 @@ public class DepartmentService {
     public Department getDepartmentById(Long id) {
         return departmentRepository.findById(id).orElse(null);
     }
+
+    public void createDepartment(Department department) {
+        departmentRepository.save(department);
+    }
+
 }
