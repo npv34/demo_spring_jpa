@@ -1,7 +1,11 @@
 package org.app.demojpa.dto;
 
+import jakarta.validation.constraints.NotBlank;
+
 public class DepartmentDto {
     private Long id;
+
+    @NotBlank(message = "Department name cannot be blank")
     private String name;
 
     public DepartmentDto() {

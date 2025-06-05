@@ -1,9 +1,18 @@
 package org.app.demojpa.request;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+
 public class UserRequest {
+
+    @NotBlank(message = "Name cannot be blank")
     private String name;
+    @NotBlank(message = "Email cannot be blank")
+    @Email(message = "Email should be valid")
     private String email;
+    @NotBlank(message = "Password cannot be blank")
     private String password;
+
     private Long departmentId;
 
     public UserRequest() {

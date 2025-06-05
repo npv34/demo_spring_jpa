@@ -1,5 +1,6 @@
 package org.app.demojpa.api;
 
+import jakarta.validation.Valid;
 import org.app.demojpa.dto.DepartmentDetailDto;
 import org.app.demojpa.dto.DepartmentDto;
 import org.app.demojpa.dto.UserDto;
@@ -45,7 +46,7 @@ public class DepartmentAPIController {
     }
 
     @PostMapping
-    public ResponseEntity<APIResponse> createUser(@RequestBody DepartmentDto departmentDto) {
+    public ResponseEntity<APIResponse> createDepartment(@Valid @RequestBody DepartmentDto departmentDto) {
         APIResponse response = new APIResponse();
         try {
             Department department = new Department();
